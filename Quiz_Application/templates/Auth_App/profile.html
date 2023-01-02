@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+
+Profile Page
+
+{% endblock %}
+
+
+{% block body_block %}
+
+<br>
+
+<div style="text-align:center;">
+
+    <h2>Welcom {{user.username}} For Skill Test Demo Quizzes</h2>
+
+    <h3>You are one step ahead to take the quiz</h3>
+
+    <h3>There are two quizzes for demo</h3>
+
+    <h4>Login By: <b>{{user.username}}</b></h4>
+
+    <h4>To logout click logout Button : <a href="{% url 'logout' %}">Logout</a></h4>
+
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Quiz-2 Page
+{% endblock %}
+
+{% block body_block %}
+
+<br>
+
+<div class="container ">
+
+    <h1 style="text-align:center;">Welcome to Skill Test Quiz-2</h1>
+
+    <hr>
+
+    <form method='post'>
+
+        {% csrf_token %}
+        {% for row in questions %}
+
+        <label for="question">{{row.question}}</label>
+
+        <div class="form-check">
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="{{row.question}}" value="option1">
+                <label class="form-check-label">{{row.op1}}</label>
+
+            </div>
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="{{row.question}}" value="option2">
+                <label class="form-check-label">{{row.op2}}</label>
+
+            </div>
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="{{row.question}}" value="option3">
+                <label class="form-check-label">{{row.op3}}</label>
+
+            </div>
+
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="{{row.question}}" value="option4">
+                <label class="form-check-label">{{row.op4}}</label>
+            </div>
+            
+            <br>
+
+        </div>
+            
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
+<br>
+<hr>
+
+{% endblock %}
